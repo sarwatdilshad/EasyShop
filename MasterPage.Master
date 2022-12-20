@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="EasyShop.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+    <head runat="server">
+    <title>Easy Shop</title>   
+ 
+        <link href="~/Styles/StyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div id="wrapper">
+                <div id="banner">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Banner.jpg" Width="100%" />
+                </div>
+                <div id="navigation">
+                    <ul id="nav">
+                        <li><asp:HyperLink ID="hlShop" runat="server" NavigateUrl="~/Index.aspx" >Shop Now</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="hlAbout" runat="server" NavigateUrl="~/Pages/About.aspx" >About Us</asp:HyperLink></li>
+                      
+                        <li><asp:HyperLink ID="hlManager" runat="server" NavigateUrl="~/Pages/AdminPages/Management.aspx">Products Information</asp:HyperLink></li>
+                        <li style="float: right">
+                            <asp:HyperLink ID="lnkRegister" runat="server" NavigateUrl="~/Pages/Account/SignUp.aspx">Sign Up</asp:HyperLink>
+                           <asp:HyperLink ID="litStatus" runat="server" NavigateUrl="~/Pages/ShoppingCart.aspx"></asp:HyperLink>
+                        </li>
+                        <li style="float: right">
+                            <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Pages/Account/SignIn.aspx">Sign In</asp:HyperLink>
+                            <asp:LinkButton ID="lnkLogout" runat="server" Text="Sign Out" OnClick="lnkLogOut_Click" />
+                        </li>
+                        </ul>
+                </div>
+                <div id="content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
+
+</html>
